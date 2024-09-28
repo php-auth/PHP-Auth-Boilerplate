@@ -164,8 +164,7 @@ Route::add('/my-route/(.*)', function ($arg) {
 <pre class="text-start">
 <h3>Roles: <a href="https://github.com/delight-im/PHP-Auth/blob/master/README.md#roles-or-groups">PHP-Auth</a></h3>
 <code class="language-php">
-```
-&lt;?php
+```php
 
 \Delight\Auth\Role::ADMIN;
 \Delight\Auth\Role::AUTHOR;
