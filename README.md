@@ -26,6 +26,8 @@ Authentication for PHP. Simple, lightweight and secure.
 
 [PHP-Auth-Boilerplate-main.zip](https://github.com/php-auth/PHP-Auth-Boilerplate/archive/refs/heads/main.zip)
 
+<br><br>
+
 <strong>2. Extract the file and enter the directory</strong>
 
 debian@debian:~$ **cd PHP-Auth-Boilerplate-main**
