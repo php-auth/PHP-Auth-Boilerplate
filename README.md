@@ -25,6 +25,10 @@ Authentication for PHP. Simple, lightweight and secure.
 
 debian@debian:~$ **php install.php**
 
+### Database configuration:
+
+/config/**connection.ini**
+
 ### Run:
 
 debian@debian:~$ **php server.php**
