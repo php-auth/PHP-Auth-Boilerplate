@@ -22,7 +22,7 @@ Authentication for PHP. Simple, lightweight and secure.
 
 # Installation
 
-### 1. Download:
+<strong>1. Download:</strong>
 
 [PHP-Auth-Boilerplate-main.zip](https://github.com/php-auth/PHP-Auth-Boilerplate/archive/refs/heads/main.zip)
 
