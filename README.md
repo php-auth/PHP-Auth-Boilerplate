@@ -15,12 +15,12 @@ Authentication for PHP. Simple, lightweight and secure.
 <p align="center"><img src="https://raw.githubusercontent.com/php-auth/PHP-Auth-Boilerplate/refs/heads/main/docs/reset_password.png"></p>
 <p align="center"><img src="https://raw.githubusercontent.com/php-auth/PHP-Auth-Boilerplate/refs/heads/main/docs/manage_users.png"></p>
 
-### Requirements:
+### Requirements
 
 - PHP
 - Node.js
 
-### INSTALL
+### Installation
 
 ---
 
