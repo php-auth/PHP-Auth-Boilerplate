@@ -22,9 +22,11 @@ Authentication for PHP. Simple, lightweight and secure.
 
 <hr>
 
+<p align="center"><h1>INSTALL</h1></p>
+
 ### 1. [Download](https://github.com/php-auth/PHP-Auth-Boilerplate/archive/refs/heads/main.zip)
 
-### 2. Install (Via Terminal):
+### 2. Install the packages:
 
 * debian@debian:~$ **cd PHP-Auth-Boilerplate**
 
