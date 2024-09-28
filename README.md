@@ -32,21 +32,31 @@ Authentication for PHP. Simple, lightweight and secure.
 
 debian@debian:~$ **cd PHP-Auth-Boilerplate-main**
 
+<br>
+
 <strong>3. Install the packages (Composer & NPM)</strong>
 
 debian@debian:~/PHP-Auth-Boilerplate-main$ **php install.php**
+
+<br>
 
 <strong>4. Database configuration</strong>
 
 /PHP-Auth-Boilerplate-main/config/**connection.ini**
 
+<br>
+
 <strong>5. Run through development server</strong>
 
 debian@debian:~/PHP-Auth-Boilerplate-main$ **php server.php**
 
+<br>
+
 <strong>6. Access the URL in the browser</strong>
 
 http://localhost:3000
+
+<br>
 
 # Login
 
