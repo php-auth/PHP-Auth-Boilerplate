@@ -241,7 +241,7 @@ Array
 
 ```
 <div class="alert alert-primary text-wrap text-start mt-5 p-4" role="alert">
-  <h5><i class="fa-solid fa-circle-info me-2"></i><strong>Note</strong></h5>
+  <h5><i class="fa-solid fa-circle-info me-2"></i><strong>Tip</strong></h5>
   <p class="m-0 p-0">- To view formatted data use the function: <strong>print_f();</strong> instead of <strong>print_r();</strong></p>
 </div>
 
