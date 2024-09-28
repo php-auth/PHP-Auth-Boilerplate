@@ -38,7 +38,11 @@ Authentication for PHP. Simple, lightweight and secure.
 
 * debian@debian:~/PHP-Auth-Boilerplate$ **php server.php**
 
-http://localhost:3000/
+### 5. Access the URL in the browser:
+
+http://localhost:3000
+
+<hr>
 
 ### Login
 
