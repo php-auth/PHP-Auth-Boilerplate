@@ -26,9 +26,9 @@ Authentication for PHP. Simple, lightweight and secure.
 
 ### 2. Install (Via Terminal):
 
---debian@debian:~$-- **cd PHP-Auth-Boilerplate**
+* debian@debian:~$ **cd PHP-Auth-Boilerplate**
 
---debian@debian:~/PHP-Auth-Boilerplate$-- **php install.php**
+* debian@debian:~/PHP-Auth-Boilerplate$ **php install.php**
 
 ### 3. Database configuration:
 
@@ -36,7 +36,7 @@ Authentication for PHP. Simple, lightweight and secure.
 
 ### 4. Run:
 
---debian@debian:~/PHP-Auth-Boilerplate$-- **php server.php**
+* debian@debian:~/PHP-Auth-Boilerplate$ **php server.php**
 
 http://localhost:3000/
 
