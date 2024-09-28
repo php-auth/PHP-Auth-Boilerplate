@@ -241,8 +241,6 @@ Array
 
 ```
 
-<strong>Tip - </strong>To view formatted data use the function: <strong>print_f();</strong> instead of <strong>print_r();</strong>
-
 ## License
 
 This project is licensed under the terms of the <a href="https://opensource.org/license/MIT">MIT License</a>.
