@@ -161,10 +161,10 @@ Route::add('/my-route/(.*)', function ($arg) {
 </code>
 </pre>
 
-<pre class="text-start">
 <h3>Roles: <a href="https://github.com/delight-im/PHP-Auth/blob/master/README.md#roles-or-groups">PHP-Auth</a></h3>
 <code class="language-php">
 ```php
+&lt;?php
 
 \Delight\Auth\Role::ADMIN;
 \Delight\Auth\Role::AUTHOR;
@@ -222,7 +222,6 @@ Array
 )
 ```
 </code>
-</pre>
 
 <div class="alert alert-primary text-wrap text-start mt-5 p-4" role="alert">
   <h5><i class="fa-solid fa-circle-info me-2"></i><strong>Note</strong></h5>
