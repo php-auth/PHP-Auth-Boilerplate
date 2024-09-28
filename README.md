@@ -32,8 +32,8 @@ debian@debian:~$ **php server.php**
 http://localhost:3000/
 
 <div class="my-5">
-  <h3 class="fs-3">Routes</h3>
   <hr>
+  <h3 class="fs-3">Routes</h3>
   <a class="btn btn-primary border-0 shadow fs-5" href="javascript:history.back()">
     <i class="fa fa-arrow-left" aria-hidden="true"></i>
   </a>
@@ -42,7 +42,6 @@ http://localhost:3000/
   </a>
 </div>
 
-<p class="text-start">In this directory are your application's route files.</p>
 <p class="text-start">Route is the path (URL) and are responsible for calling the controllers.</p>
 
 <a href="https://github.com/steampixel/simplePHPRouter/tree/master">
@@ -115,7 +114,7 @@ Route::add('/my-route/(.*)/(.*)/(.*)/(.*)', function ($n1, $n2, $n3, $n4) {
 </code>
 </pre>
 
-<i class="fa-solid fa-lock me-2"></i>Authenticated Route
+<h3 class="fs-3">Authenticated Route</h3>
 
 <pre class="text-start">
 Examples:
@@ -157,7 +156,7 @@ Route::add('/my-route/(.*)', function ($arg) {
 </pre>
 
 <pre class="text-start">
-Roles: <a href="https://github.com/delight-im/PHP-Auth/blob/master/README.md#roles-or-groups">PHP-Auth</a>
+<h3>Roles: <a href="https://github.com/delight-im/PHP-Auth/blob/master/README.md#roles-or-groups">PHP-Auth</a></h3>
 <code class="language-php">
 &lt;?php
 
