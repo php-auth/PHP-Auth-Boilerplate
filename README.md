@@ -24,7 +24,9 @@ Authentication for PHP. Simple, lightweight and secure.
 
 ---
 
-### 1. [Download](https://github.com/php-auth/PHP-Auth-Boilerplate/archive/refs/heads/main.zip)
+### 1. Download:
+
+[PHP-Auth-Boilerplate-main.zip](https://github.com/php-auth/PHP-Auth-Boilerplate/archive/refs/heads/main.zip)
 
 ### 2. Install the packages (Composer & NPM):
 
