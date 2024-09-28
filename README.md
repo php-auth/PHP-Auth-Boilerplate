@@ -31,6 +31,12 @@ debian@debian:~$ **php server.php**
 
 http://localhost:3000/
 
+### Login
+
+Email: **admin@email.local**
+
+Password: **12345678**
+
 <div class="my-5">
   <hr>
   <h3 class="fs-3">Routes</h3>
