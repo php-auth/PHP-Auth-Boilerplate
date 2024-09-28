@@ -122,10 +122,9 @@ Route::add('/my-route/(.*)/(.*)/(.*)/(.*)', function ($n1, $n2, $n3, $n4) {
 
 <h3 class="fs-3">Authenticated Route</h3>
 
-<pre class="text-start">
-Examples:
-<code class="language-php">
-&lt;?php
+```php
+
+<?php
 
 use Core\Route;
 use Core\Auth;
@@ -158,8 +157,7 @@ Route::add('/my-route/(.*)', function ($arg) {
     });
 });
 
-</code>
-</pre>
+```
 
 <h3>Roles: <a href="https://github.com/delight-im/PHP-Auth/blob/master/README.md#roles-or-groups">PHP-Auth</a></h3>
 
