@@ -21,11 +21,9 @@ Authentication for PHP. Simple, lightweight and secure.
 - PHP
 - Node.js
 
-### Download:
+### [Download](https://github.com/php-auth/PHP-Auth-Boilerplate/archive/refs/heads/main.zip)
 
-[Download](https://github.com/php-auth/PHP-Auth-Boilerplate/archive/refs/heads/main.zip)
-
-### Install:
+### Install (Via Terminal):
 
 debian@debian:~$ **cd PHP-Auth-Boilerplate**
 
