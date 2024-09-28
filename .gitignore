@@ -1,0 +1,10 @@
+!/*.gitkeep
+/packages/node_modules/*
+/packages/vendor/*
+!/packages/vendor/core
+!/packages/vendor/composer.js
+!/packages/vendor/composer.phar
+!/packages/vendor/index.php
+/packages/composer.lock
+/packages/package-lock.json
+/storage/*
