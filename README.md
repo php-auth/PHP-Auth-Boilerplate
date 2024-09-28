@@ -90,7 +90,7 @@ Route::add('/my-route', function () {
 
 Route::add('/my-route', function () {
     controller('MyController')->myMethod($_POST);
-}, 'post'); // &lt;form action="http://localhost/my-route" method="POST">&lt;/form>
+}, 'post'); // <form action="http://localhost/my-route" method="POST"></form>
 
 Route::add('/my-route', function () {
     controller('MyController')->myMethod($_REQUEST); // $_GET and $_POST
