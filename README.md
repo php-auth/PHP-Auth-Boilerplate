@@ -56,7 +56,6 @@ debian@debian:~/PHP-Auth-Boilerplate-main$ **php server.php**
 
 http://localhost:3000
 
-<br>
 
 # Login
 
