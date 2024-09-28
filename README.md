@@ -1,8 +1,12 @@
+<br><br><br>
+
 <p align="center"><img src="https://raw.githubusercontent.com/php-auth/PHP-Auth-Boilerplate/refs/heads/main/docs/php-auth.png" style="width:200px;"></p>
 
 <p align="center">
 Authentication for PHP. Simple, lightweight and secure.
 </p>
+
+<br><br>
 
 # 
 
