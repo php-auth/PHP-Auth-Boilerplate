@@ -164,6 +164,7 @@ Route::add('/my-route/(.*)', function ($arg) {
 <pre class="text-start">
 <h3>Roles: <a href="https://github.com/delight-im/PHP-Auth/blob/master/README.md#roles-or-groups">PHP-Auth</a></h3>
 <code class="language-php">
+```php
 &lt;?php
 
 \Delight\Auth\Role::ADMIN;
@@ -220,7 +221,7 @@ Array
   [1048576] => SUPER_MODERATOR
   [2097152] => TRANSLATOR
 )
-
+```
 </code>
 </pre>
 
@@ -229,6 +230,6 @@ Array
   <p class="m-0 p-0">- To view formatted data use the function: <strong>print_f();</strong> instead of <strong>print_r();</strong></p>
 </div>
 
-# License
+## License
 
 This project is licensed under the terms of the <a href="https://opensource.org/license/MIT">MIT License</a>.
