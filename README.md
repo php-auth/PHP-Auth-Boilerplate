@@ -54,10 +54,9 @@ Password: **12345678**
   simplePHPRouter - https://github.com/steampixel/simplePHPRouter/tree/master
 </a>
 
-<pre class="text-start">
-Examples:
-<code class="language-php">
-&lt;?php
+```php
+
+<?php
 
 use Core\Route;
 
@@ -117,8 +116,7 @@ Route::add('/my-route/(.*)/(.*)/(.*)/(.*)', function ($n1, $n2, $n3, $n4) {
     controller('MyController')->myMethod($n1, $n2, $n3, $n4);
 }); // http://localhost/my-route/a/b/c/1
 
-</code>
-</pre>
+```
 
 <h3 class="fs-3">Authenticated Route</h3>
 
