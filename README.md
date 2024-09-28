@@ -4,9 +4,7 @@
 Authentication for PHP. Simple, lightweight and secure.
 </p>
 
-<br><br><br>
-
-# PHP-Auth-Boilerplate
+# 
 
 <p align="center"><img src="https://raw.githubusercontent.com/php-auth/PHP-Auth-Boilerplate/refs/heads/main/docs/login.png"></p>
 <p align="center"><img src="https://raw.githubusercontent.com/php-auth/PHP-Auth-Boilerplate/refs/heads/main/docs/create_new_account.png"></p>
