@@ -1,0 +1,68 @@
+{% set route = '/' ~ translate(session('auth_route')|slice(1)) %}
+{% if session('auth_logged_in') %}
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="account">
+    <i class="fa fa-user me-2" aria-hidden="true"></i>{{ session('auth_username') ? session('auth_username') : translate('Account') }}
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="account">
+    <li>
+      <a class="dropdown-item ajax" href="{{ route }}" data-ajax-href="{{ route }}?auth=change-name">
+        <i class="fa fa-user me-2" aria-hidden="true"></i>{{ translate('Change name') }}
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item ajax" href="{{ route }}" data-ajax-href="{{ route }}?auth=change-email">
+        <i class="fa fa-envelope me-2" aria-hidden="true"></i>{{ translate('Change e-mail') }}
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item ajax" href="{{ route }}" data-ajax-href="{{ route }}?auth=change-password">
+        <i class="fa fa-key me-2" aria-hidden="true"></i>{{ translate('Change password') }}
+      </a>
+    </li>
+    {% if session('auth_roles') == 1 %}
+    <li>
+      <a class="dropdown-item ajax" href="{{ route }}" data-ajax-href="{{ route }}?auth=manage-users">
+        <i class="fa fa-users me-2" aria-hidden="true"></i>{{ translate('Manage users') }}
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item ajax" href="{{ route }}" data-ajax-href="{{ route }}?auth=settings">
+        <i class="fa fa-tools me-2" aria-hidden="true"></i>{{ translate('Settings') }}
+      </a>
+    </li>
+    {% endif %}
+    <li>
+      <hr class="dropdown-divider">
+    </li>
+    <li>
+      <a class="dropdown-item ajax" href="{{ route }}" data-ajax-href="{{ route }}?auth=logout">
+        <i class="fas fa-sign-out-alt me-2" aria-hidden="true"></i>{{ translate('Exit') }}
+      </a>
+    </li>
+  </ul>
+</li>
+{% else %}
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="account">
+    <i class="fa fa-user me-2" aria-hidden="true"></i>{{ translate('Account') }}
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="account">
+    <li>
+      <a class="dropdown-item ajax" href="{{ route }}" data-ajax-href="{{ route }}">
+        <i class="fa fa-lock me-2" aria-hidden="true"></i>{{ translate('Login') }}
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item ajax" href="{{ route }}" data-ajax-href="{{ route }}?auth=create-account">
+        <i class="fa fa-plus me-2" aria-hidden="true"></i>{{ translate('Sign up') }}
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item ajax" href="{{ route }}" data-ajax-href="{{ route }}?auth=forgot-password">
+        <i class="fa fa-key me-2" aria-hidden="true"></i>{{ translate('Reset password') }}
+      </a>
+    </li>
+  </ul>
+</li>
+{% endif %}

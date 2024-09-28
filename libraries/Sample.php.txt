@@ -1,0 +1,26 @@
+<?php
+/**
+ * Sample
+ *
+ * Description of your class.
+ *
+ * @version 1.0.0
+ */
+namespace App\Lib;
+
+class Sample
+{
+    /**
+     * method
+     *
+     * Description of your method.
+     *
+     * @param string $str
+     * @return string
+     * @access public
+     */
+    public function method($str) : string
+    {
+        return $str;
+    }
+}

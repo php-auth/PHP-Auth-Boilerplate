@@ -1,0 +1,12 @@
+{% include 'php-auth/header.html' with {subtitle: translate('Confirm email')} %}
+<h2 class="text-secondary font-condensed-light p-2">{{ translate('Confirm email') }}</h2>
+{% include 'php-auth/message.html' %}
+{{ not auth.login ? '<hr class="text-secondary mt-4">' }}
+<div class="col-12">
+{% if not auth.login %}
+  <p class="text-center mb-0">
+    <i class="fa-solid fa-lock text-secondary me-2"></i><a class="text-secondary" href="{{ route }}">Login</a>
+  </p>
+{% endif %}
+</div>
+{% include 'php-auth/footer.html' %}

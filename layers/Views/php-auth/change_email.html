@@ -1,0 +1,19 @@
+{% include 'php-auth/header.html' with {subtitle: translate('Change e-mail')} %}
+<h2 class="text-secondary font-condensed-light">
+  <i class="fa fa-envelope fa-sm me-2" aria-hidden="true"></i>{{ translate('Change e-mail') }}
+</h2>
+{% include 'php-auth/message.html' %}
+<form class="row g-3 ajax" action="{{ route }}?auth=change-email" method="POST" id="auth">
+  <div class="col-12">
+    <input class="form-control shadow-none" required type="text" placeholder="{{ translate('New e-mail') }}" value="{{ new_email }}" name="new_email" id="new_email">
+  </div>
+  <div class="col-12">
+    <input class="form-control shadow-none" required type="password" placeholder="{{ translate('Password') }}" name="password" id="password">
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary bg-gradient shadow w-100 p-2" type="submit">
+      <i class="fa fa-save fa-sm me-2" aria-hidden="true"></i>{{ translate('Save') }}
+    </button>
+  </div>
+</form>
+{% include 'php-auth/footer.html' %}

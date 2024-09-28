@@ -1,0 +1,21 @@
+<hr class="text-secondary my-3">
+{% if message.success %}
+    <script>
+    $_["document"].ready(function () {
+        $("#auth :input").prop("disabled", true);
+    });
+    </script>
+    {{ box(translate(message.success), 'success', true) }}
+{% else %}
+    {% if message.error %}
+        <script>
+        $_["document"].ready(function () {
+            var input = "{{ message.input }}".replace(/\s/g,"").split(",");
+            $(input).each(function (index) {
+                $("#" + input[index]).addClass("border border-danger");
+            });
+        });
+        </script>
+        {{ box(translate(message.error), 'danger', true) }}
+    {% endif %}
+{% endif %}

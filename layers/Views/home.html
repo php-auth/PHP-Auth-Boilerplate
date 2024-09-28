@@ -1,0 +1,26 @@
+{% include header with {
+    meta: {
+      subtitle: '',
+      description: '',
+      keywords: ''
+    },
+    css : ['/path/to/your/style.min.css']
+  }
+%}
+<script type="text/javascript">
+$(document).ready(function () {
+    $("body").css("padding-top", "0");
+});
+</script>
+  <div class="container-fluid fade-in">
+    <div class="row d-flex align-items-center justify-content-center text-center min-vh-100">
+      <div class="col">
+        <img class="img-fluid" src="/images/brands/php-auth.png" alt="PHP-Auth">
+        <h1 class="fw-light my-4">{{ translate('Authentication for PHP. Simple, lightweight and secure.') }}</h1>
+        {% if session('auth_logged_in') %}
+        <h2 class="fw-bold text-success">{{ translate('Logged in successfully!') }}</h2>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% include footer %}

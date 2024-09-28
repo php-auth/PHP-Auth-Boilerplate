@@ -1,0 +1,220 @@
+{% include header with {
+    css: [
+      '/packages/tabulator-tables/css/tabulator.min.css'
+    ],
+    meta: {
+      subtitle: 'Manage users'
+    },
+    main: {
+      css: session('auth_logged_in') ? 'bg-grid' :
+           'bg-abstract bg-center-bottom bg-no-repeat'
+    }
+  }
+%}
+<script>
+$(document).ready(function () {
+    var route = "{{ route }}?auth=manage-users.update-status";
+    var info  = data => $_["component"].dialog.alert(
+                '<h2 class="bg-dot rounded py-2">' +
+                $_["component"].icon(data.result ? "success" : "danger") +
+                '</h2><p class="py-2">' + translate(data.message) + "</p>");
+    var item  = (title, color) =>
+                '<div class="text-light bg-' + color + ' px-4">' +
+                translate(title) + '</div>';
+    var label = [item("Active", "success"),
+                 item("Archived", "secondary"),
+                 item("Banned", "black"),
+                 item("Locked", "danger"),
+                 item("Pending", "primary"),
+                 item("Suspended", "warning")
+                ];
+    // =========================================================================
+    // columns
+    // =========================================================================
+    var columns = [
+        // ID ------------------------------------------------------------------
+        {
+          title: "ID",
+          field: "id",
+          width: 80
+        },
+        // User ----------------------------------------------------------------
+        {
+          title: translate("User"),
+          field: "username"
+        },
+        // E-mail --------------------------------------------------------------
+        {
+          title: "E-mail",
+          field: "email",
+          formatter: "link",
+          formatterParams: {
+            urlPrefix: "mailto://",
+            target: "_blank"
+          }
+        },
+        // Verified ------------------------------------------------------------
+        {
+          title: translate("Verified"),
+          field: "verified",
+          hozAlign: "center",
+          formatter: "tickCross",
+          sorter: "boolean",
+          width: 120
+        },
+        // Status --------------------------------------------------------------
+        {
+          title: "Status",
+          field: "status",
+          editor: "list",
+          formatter: (cell, formatterParams, onRendered) => {
+              onRendered(() => {
+                  var option = i => {
+                      cell.setValue(label[i]);
+                      if (cell.getOldValue() !== i) {
+                          $_["http"].request(route, "id=" + cell.getData().id +
+                                             "&status=" + i,
+                                             (error, response) => {
+                              if (!error) {
+                                  if (!response.data.result) {
+                                      i = cell.getInitialValue();
+                                      cell.setValue(label[i]);
+                                  }
+                                  info(response.data);
+                                  cell.refreshData();
+                              }
+                          });
+                      }
+                  };
+                  switch (String(cell.getValue())) {
+                    case "0":
+                      option(0);
+                      break;
+                    case "1":
+                      option(1);
+                      break;
+                    case "2":
+                      option(2);
+                      break;
+                    case "3":
+                      option(3);
+                      break;
+                    case "4":
+                      option(4);
+                      break;
+                    case "5":
+                      option(5);
+                  }
+              });
+              return cell.getValue();
+          },
+          editorParams: cell => {
+              var option = {};
+              for (let key in label) {
+                  if (cell.getValue() !== label[key]) {
+                      option[key] = label[key];
+                  }
+              }
+              return {values: option};
+          },
+          cellClick: (e, cell) => {
+              cell.setValue(label[cell.getOldValue()]);
+          },
+          width: 120
+        }
+      ];
+    // =========================================================================
+    // Select - Filter
+    // =========================================================================
+    var select = option => {
+        switch (option) {
+          case "verified-1":
+            datagrid.filter("verified", "=", 1);
+            break;
+          case "verified-0":
+            datagrid.filter("verified", "=", 0);
+            break;
+          case "active":
+            datagrid.filter("status", "in", ["0", label[0]]);
+            break;
+          case "archived":
+            datagrid.filter("status", "in", ["1", label[1]]);
+            break;
+          case "banned":
+            datagrid.filter("status", "in", ["2", label[2]]);
+            break;
+          case "locked":
+            datagrid.filter("status", "in", ["3", label[3]]);
+            break;
+          case "pending":
+            datagrid.filter("status", "in", ["4", label[4]]);
+            break;
+          case "suspended":
+            datagrid.filter("status", "in", ["5", label[5]]);
+        }
+    };
+    // =========================================================================
+    // Class instance
+    // =========================================================================
+    var datagrid = new JDatagrid("#datagrid", columns, select);
+});
+</script>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div class="container text-center p-4">
+        <div class="row">
+          <div class="col">
+            <fieldset class="bg-dark-subtle rounded p-4">
+              <legend class="text-secondary w-auto pt-4">
+                <i class="fa fa-users me-2"></i>{{ translate('Manage users') }}
+              </legend>
+              <hr class="text-secondary">
+              <form action="{{ route }}?auth=manage-users.get-data" id="datagrid">
+                <div class="row">
+                  <div class="col-6 col-md-2">
+                    <select class="form-select bg-light border-0 box-shadow-none w-auto mt-2">
+                      <option selected disabled hidden>{{ translate('Filter by:') }}</option>
+                      <optgroup label="{{ translate('User') }}">
+                        <option value="verified-1">{{ translate('Verified') }}</option>
+                        <option value="verified-0">{{ translate('Not verified') }}</option>
+                      </optgroup>
+                      <optgroup label="Status">
+                        <option value="active">{{ translate('Active') }}</option>
+                        <option value="archived">{{ translate('Archived') }}</option>
+                        <option value="banned">{{ translate('Banned') }}</option>
+                        <option value="locked">{{ translate('Locked') }}</option>
+                        <option value="pending">{{ translate('Pending') }}</option>
+                        <option value="suspended">{{ translate('Suspended') }}</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="col-6 col-md-2 text-end">
+                    <button class="btn btn-light border-0 box-shadow-none mt-2 p-2" type="reset">
+                      <i class="fa fa-sync-alt mx-2" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="col">
+                    <div class="input-group mt-2">
+                      <input class="form-control border-0 box-shadow-none rounded-0 rounded-start p-2" type="text" placeholder="{{ translate('Search') }}" aria-label="{{ translate('Search') }}" aria-describedby="{{ translate('Search') }}" name="term">
+                      <div class="input-group-append">
+                        <button class="btn btn-danger border-0 box-shadow-none rounded-0 rounded-end p-2" type="submit">
+                          <i class="fa fa-search mx-2"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% include footer with {
+  js: [
+    '/packages/tabulator-tables/js/tabulator.min.js'
+  ]}
+%}

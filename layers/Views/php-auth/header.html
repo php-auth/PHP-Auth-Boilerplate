@@ -1,0 +1,26 @@
+{% include header with {
+    meta: {
+      subtitle: subtitle
+    },
+    main: {
+      css: session('auth_logged_in') ? 'bg-secondary-subtle' : 'bg-light'
+    }
+  }
+%}
+<script type="text/javascript">
+$_["document"].ready(function () {
+    $_["document"].resizeScreen();
+});
+$_["document"].windowResizeEvent(function () {
+    $_["document"].resizeScreen();
+});
+</script>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-10 col-xxl-8 my-3">
+      <div class="container centralize">
+        <div class="row">
+          <div class="col-sm-10 col-md-8 col-lg-6 col-xl-4 offset-sm-1 offset-md-2 offset-lg-3 offset-xl-4">
+            <div class="login-form bg-dark-subtle rounded shadow my-5 p-4">

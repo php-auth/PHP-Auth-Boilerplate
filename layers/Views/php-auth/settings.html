@@ -1,0 +1,25 @@
+{% include 'php-auth/header.html' with {subtitle: translate('Settings')} %}
+<h2 class="text-secondary font-condensed-light">
+  <i class="fa fa-tools fa-sm me-2" aria-hidden="true"></i>{{ translate('Settings') }}
+</h2>
+{% include 'php-auth/message.html' %}
+<form class="row g-3 ajax" action="{{ route }}?auth=settings" method="POST" id="auth">
+  <div class="col-12">
+    <div class="text-secondary ms-1 mb-1">
+    {{ translate('Base route') }}
+    </div>
+    <input class="form-control shadow-none" required type="text" placeholder="/account" value="{{ session('auth_route') }}" name="base_route" id="base_route">
+  </div>
+  <div class="col-12">
+    <div class="text-secondary ms-1 mb-1">
+    {{ translate('Destination route') }}
+    </div>
+    <input class="form-control shadow-none" required type="text" placeholder="/" value="{{ session('auth_redirect') }}" name="dest_route" id="dest_route">
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary bg-gradient shadow w-100 p-2" type="submit">
+      <i class="fa fa-save fa-sm me-2" aria-hidden="true"></i>{{ translate('Save') }}
+    </button>
+  </div>
+</form>
+{% include 'php-auth/footer.html' %}

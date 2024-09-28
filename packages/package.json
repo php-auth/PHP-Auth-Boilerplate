@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "axios": "^1.7.7",
+    "bootbox.v5": "^6.0.1",
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1",
+    "jscript": "file:jscript",
+    "minimist": "^1.2.8",
+    "tabulator-tables": "^6.2.5"
+  },
+  "public": {
+    "axios": "axios/dist",
+    "bootbox": "bootbox.v5/dist",
+    "bootstrap": "bootstrap/dist",
+    "fontawesome": "@fortawesome/fontawesome-free",
+    "jquery": "jquery/dist",
+    "jscript": "jscript/dist",
+    "tabulator-tables": "tabulator-tables/dist"
+  },
+  "engines": {
+    "composer": "2.7.9"
+  },
+  "scripts": {
+    "install": "node vendor/composer.js install"
+  }
+}
