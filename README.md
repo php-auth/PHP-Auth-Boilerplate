@@ -20,9 +20,7 @@ Authentication for PHP. Simple, lightweight and secure.
 - PHP
 - Node.js
 
-<hr>
-
-<p align="center"><h1>INSTALL</h1></p>
+### INSTALL
 
 ### 1. [Download](https://github.com/php-auth/PHP-Auth-Boilerplate/archive/refs/heads/main.zip)
 
@@ -36,7 +34,7 @@ Authentication for PHP. Simple, lightweight and secure.
 
 /PHP-Auth-Boilerplate/config/**connection.ini**
 
-### 4. Run:
+### 4. Run through development server:
 
 * debian@debian:~/PHP-Auth-Boilerplate$ **php server.php**
 
