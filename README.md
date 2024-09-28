@@ -23,19 +23,19 @@ Authentication for PHP. Simple, lightweight and secure.
 
 <hr>
 
-### [Download](https://github.com/php-auth/PHP-Auth-Boilerplate/archive/refs/heads/main.zip)
+### 1-) [Download](https://github.com/php-auth/PHP-Auth-Boilerplate/archive/refs/heads/main.zip)
 
-### Install (Via Terminal):
+### 2-) Install (Via Terminal):
 
 debian@debian:~$ **cd PHP-Auth-Boilerplate**
 
 debian@debian:~/PHP-Auth-Boilerplate$ **php install.php**
 
-### Database configuration:
+### 3-) Database configuration:
 
 /PHP-Auth-Boilerplate/config/**connection.ini**
 
-### Run:
+### 4-) Run:
 
 debian@debian:~/PHP-Auth-Boilerplate$ **php server.php**
 
