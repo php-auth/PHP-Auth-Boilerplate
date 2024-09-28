@@ -14,7 +14,6 @@ Authentication for PHP. Simple, lightweight and secure.
 <p align="center"><img src="https://raw.githubusercontent.com/php-auth/PHP-Auth-Boilerplate/refs/heads/main/docs/create_new_account.png"></p>
 <p align="center"><img src="https://raw.githubusercontent.com/php-auth/PHP-Auth-Boilerplate/refs/heads/main/docs/reset_password.png"></p>
 <p align="center"><img src="https://raw.githubusercontent.com/php-auth/PHP-Auth-Boilerplate/refs/heads/main/docs/manage_users.png"></p>
-<p align="center"><img src="https://raw.githubusercontent.com/php-auth/PHP-Auth-Boilerplate/refs/heads/main/docs/home.png"></p>
 
 ### Requirements:
 
@@ -23,19 +22,19 @@ Authentication for PHP. Simple, lightweight and secure.
 
 <hr>
 
-### 1-) [Download](https://github.com/php-auth/PHP-Auth-Boilerplate/archive/refs/heads/main.zip)
+### 1. [Download](https://github.com/php-auth/PHP-Auth-Boilerplate/archive/refs/heads/main.zip)
 
-### 2-) Install (Via Terminal):
+### 2. Install (Via Terminal):
 
 debian@debian:~$ **cd PHP-Auth-Boilerplate**
 
 debian@debian:~/PHP-Auth-Boilerplate$ **php install.php**
 
-### 3-) Database configuration:
+### 3. Database configuration:
 
 /PHP-Auth-Boilerplate/config/**connection.ini**
 
-### 4-) Run:
+### 4. Run:
 
 debian@debian:~/PHP-Auth-Boilerplate$ **php server.php**
 
@@ -46,6 +45,8 @@ http://localhost:3000/
 Email: **admin@email.local**
 
 Password: **12345678**
+
+<p align="center"><img src="https://raw.githubusercontent.com/php-auth/PHP-Auth-Boilerplate/refs/heads/main/docs/home.png"></p>
 
 <div class="my-5">
   <hr>
