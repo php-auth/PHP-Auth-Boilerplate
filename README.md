@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/php-auth/PHP-Auth-Boilerplate/refs/heads/main/docs/php-auth.png" style="width:300px;"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/php-auth/PHP-Auth-Boilerplate/refs/heads/main/docs/php-auth.png" style="width:200px;"></p>
 
 <br><br><br>
 
