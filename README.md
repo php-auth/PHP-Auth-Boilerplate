@@ -185,7 +185,9 @@ Route::add('/my-route/(.*)', function ($arg) {
 
 ```
 
-<h3>Roles: <a href="https://github.com/delight-im/PHP-Auth/blob/master/README.md#roles-or-groups">PHP-Auth</a></h3>
+## Roles
+
+<a href="https://github.com/php-auth#roles-or-groups">PHP-Auth | Roles (or groups)</a>
 
 ```php
 
