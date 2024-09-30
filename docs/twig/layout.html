@@ -1,0 +1,147 @@
+<h1>Layout</h1>
+<hr>
+<h3>Include header</h3>
+<hr>
+<pre>
+<strong>Example 1</strong>
+<code class="language-twig">
+{% include header %}
+
+</code>
+</pre>
+<pre>
+<strong>Example 2</strong>
+<code class="language-twig">
+{% include header with {
+    meta: {
+      title: '',
+      description: '',
+      keywords: ''
+    }
+  }
+%}
+
+</code>
+</pre>
+<pre>
+<strong>Example 3</strong>
+<code class="language-twig">
+{% include header with {
+    meta: {
+      title: '',
+      description: '',
+      keywords: ''
+    },
+    css: ['/packages/pack-1/style.min.css',
+          '/packages/pack-2/style.min.css',
+          '/packages/pack-3/style.min.css']
+  }
+%}
+
+</code>
+</pre>
+<pre>
+<strong>Example 4</strong>
+<code class="language-twig">
+{% include header with {
+    meta: {
+      title: '',
+      description: '',
+      keywords: ''
+    },
+    css: ['/packages/pack-1/style.min.css',
+          '/packages/pack-2/style.min.css',
+          '/packages/pack-3/style.min.css'],
+    js:  ['/packages/pack-1/script.min.js',
+          '/packages/pack-2/script.min.js',
+          '/packages/pack-3/script.min.js']
+  }
+%}
+
+</code>
+</pre>
+<pre>
+<strong>Example 5</strong>
+<code class="language-twig">
+{% include header with {
+    meta: {
+      title: translate('My title')
+    }
+%}
+
+</code>
+</pre>
+<hr>
+<h3>Include navbar</h3>
+<hr>
+<pre>
+<strong>Example 1</strong>
+<code class="language-twig">
+&lt;html>
+  &lt;head>
+  &lt;/head>
+  &lt;body>
+    &lt;header>
+      {{ include('Layout/navbar.html') }}
+    &lt;/header>
+    &lt;main>
+    &lt;/main>
+  &lt;/body>
+&lt;/html>
+
+</code>
+</pre>
+<pre>
+<strong>Example 2</strong>
+<code class="language-twig">
+&lt;html>
+  &lt;head>
+  &lt;/head>
+  &lt;body>
+    &lt;header>
+      {{ session('auth_logged_in') ? include('Layout/restricted_navbar.html') : include('Layout/navbar.html') }}
+    &lt;/header>
+    &lt;main>
+    &lt;/main>
+  &lt;/body>
+&lt;/html>
+
+</code>
+</pre>
+<hr>
+<h3>Include footer</h3>
+<hr>
+<pre>
+<strong>Example 1</strong>
+<code class="language-twig">
+{% include footer %}
+
+</code>
+</pre>
+<pre>
+<strong>Example 2</strong>
+<code class="language-twig">
+{% include footer with {
+    js: ['/packages/pack-1/script.min.js',
+         '/packages/pack-2/script.min.js',
+         '/packages/pack-3/script.min.js']
+  }
+%}
+
+</code>
+</pre>
+<pre>
+<strong>Example 3</strong>
+<code class="language-twig">
+{% include footer with {
+    css: ['/packages/pack-1/style.min.css',
+          '/packages/pack-2/style.min.css',
+          '/packages/pack-3/style.min.css'],
+    js:  ['/packages/pack-1/script.min.js',
+          '/packages/pack-2/script.min.js',
+          '/packages/pack-3/script.min.js']
+  }
+%}
+
+</code>
+</pre>

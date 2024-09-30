@@ -1,0 +1,102 @@
+<h1>Functions</h1>
+<hr>
+<pre>
+<h3>Message box</h3>
+<code class="language-twig">
+{{ box('Text...', 'Background color', 'Close button', 'CSS classes') }}
+
+{#
+  Background color:
+  primary | secondary | success | danger | warning | info | light | dark
+#}
+
+{# Close button: true | false #}
+
+{{ box('Text...') }}
+{{ box('Text...', 'primary') }}
+{{ box('Text...', 'secondary', true) }}
+{{ box('Text...', 'success', true, 'm-2 p-2 shadow') }}
+
+</code>
+</pre>
+<hr>
+<pre>
+<h3>Language list</h3>
+<code class="language-twig">
+{{ language_list() }}
+
+</code>
+</pre>
+<hr>
+<pre>
+<h3>HTML meta tag - (Merges the data from the "config/meta.ini" file with your array of meta tags.)</h3>
+<code class="language-twig">
+&lt;!DOCTYPE html>
+{% set meta = html_meta_tag({title: 'Sciola'}) %}
+&lt;html>
+  &lt;head>
+    &lt;meta name="title" content="{{ meta.title }}">
+  &lt;/head>
+...
+&lt;/html>
+
+</code>
+</pre>
+<hr>
+<pre>
+<h3>Copyright footer text</h3>
+<code class="language-twig">
+{{ copyright('now'|date('Y')) }}
+
+</code>
+</pre>
+<hr>
+<pre>
+<h3>.md file interpreter</h3>
+<code class="language-twig">
+{{ parsedown('/path/to/file.md')|raw }}
+
+</code>
+</pre>
+<hr>
+<pre>
+<h3>Set session</h3>
+<code class="language-twig">
+{{ session('key', 'value') }}
+
+</code>
+</pre>
+<hr>
+<pre>
+<h3>Get session</h3>
+<code class="language-twig">
+{{ session('key') }}
+or
+{{ session.key }}
+
+</code>
+</pre>
+<hr>
+<pre>
+<h3>Text translation</h3>
+<code class="language-twig">
+{{ translate('Text...') }}
+
+</code>
+</pre>
+<hr>
+<pre>
+<h3>Page redirect</h3>
+<code class="language-twig">
+{{ redirect('url') }}
+
+</code>
+</pre>
+<hr>
+<pre>
+<h3>Previous date</h3>
+<code class="language-twig">
+{{ previous_date() }}
+
+</code>
+</pre>

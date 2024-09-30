@@ -1,0 +1,98 @@
+<h1><a href="https://medoo.in">Medoo</a></h1>
+<h4>The Lightweight PHP Database Framework to Accelerate Development</h4>
+<hr>
+<h3>Model</h3>
+<hr>
+<pre>
+<strong>File: layers/Models/MyModel.php</strong>
+<code class="language-php">
+&lt;?php
+
+namespace Layer\Model;
+
+use Core\Connection;
+
+class MyModel
+{
+    private $orm = null;
+
+    public function __construct()
+    {
+        $this->orm = Connection::orm();
+
+        $this->orm->create('demo', [
+            'id' => [
+            'INT',
+            'NOT NULL',
+            'PRIMARY KEY'
+          ],
+            'name' => [
+            'VARCHAR(30)',
+            'NOT NULL'
+          ]
+        ]);
+    }
+
+    public function insert($name) : void
+    {
+        $this->orm->insert('demo', [
+          'id' => sizeof($this->orm->select('demo', ['id'])) + 1, // ID in SQLite
+          'name' => $name
+        ]);
+    }
+
+    public function select() : array
+    {
+        return $this->orm->select('demo', ['name']);
+    }
+}
+</code>
+</pre>
+<hr>
+<h3>Controller</h3>
+<hr>
+<pre>
+<strong>File: layers/Controllers/MyController.php</strong>
+<code class="language-php">
+&lt;?php
+
+namespace Layer\Controller;
+
+class MyController
+{
+    public function demo() : mixed
+    {
+        $model = model('MyModel');
+        $model->insert('Foo');
+        $data['arr'] = $model->select();
+        return view('demo', $data);
+    }
+}
+</code>
+</pre>
+<hr>
+<h3>View</h3>
+<hr>
+<pre>
+<strong>File: layers/Views/MyView.html</strong>
+<code class="language-twig">
+{% for data in arr %}
+&lt;p>{{ data.name }}&lt;/p>
+{% endfor %}
+</code>
+</pre>
+<hr>
+<h3>Route</h3>
+<hr>
+<pre>
+<strong>File: routes/index.php</strong>
+<code class="language-php">
+&lt;?php
+
+use Core\Route;
+
+Route::add('/my-route', function () {
+    controller('MyController')->demo();
+});
+</code>
+</pre>

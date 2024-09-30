@@ -1,0 +1,127 @@
+<h1>Customizing Filters and Functions</h1>
+<hr>
+<pre>
+<code class="language-php">
+<h3>Filter:</h3>
+&lt;?php
+
+use Core\Template;
+
+Template::twigFilter('your_filter', function ($data) {
+    return 'Your code...';
+});
+
+?>
+
+{{ 'My string...'|your_filter }}
+
+</code>
+</pre>
+<hr>
+<pre>
+<code class="language-php">
+<h3>Function:</h3>
+&lt;?php
+
+use Core\Template;
+
+Template::twigFunction('your_function', function ($data) {
+    return 'Your code...';
+});
+
+?>
+
+{{ your_function('My string...') }}
+
+</code>
+</pre>
+<hr>
+<pre>
+<strong>File: libraries/TwigFilter.php</strong>
+<code class="language-php">
+&lt;?php
+/**
+ * TwigFilter
+ *
+ * Demo class for creating custom filters.
+ */
+namespace App;
+
+use Core\Template;
+
+class TwigFilter
+{
+    /**
+     * __construct
+     *
+     * @access public
+     */
+    public function __construct()
+    {
+        Template::twigFilter('demo_filter', function ($str) {
+            return $this->demoFilter($str);
+        });
+    }
+
+    /**
+     * Demo filter
+     *
+     * @param string $str
+     * @return string
+     * @access private
+     */
+    private function demoFilter($str) : string
+    {
+        return str_replace('...', '!', $str);
+    }
+}
+
+?>
+
+</code>
+</pre>
+<hr>
+<pre>
+<strong>File: libraries/TwigFunction.php</strong>
+<code class="language-php">
+&lt;?php
+/**
+ * TwigFunction
+ *
+ * Demo class for creating custom functions.
+ */
+namespace App;
+
+use Core\Template;
+
+class TwigFunction
+{
+    /**
+     * __construct
+     *
+     * @access public
+     */
+    public function __construct()
+    {
+        Template::twigFunction('demo_function', function ($str) {
+            return $this->demoFunction($str);
+        });
+    }
+
+    /**
+     * Demo function
+     *
+     * @param string $str
+     * @return string
+     * @access private
+     */
+    private function demoFunction($str) : string
+    {
+        return $str;
+    }
+}
+
+?>
+
+</code>
+</pre>

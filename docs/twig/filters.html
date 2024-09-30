@@ -1,0 +1,44 @@
+<h1>Filters</h1>
+<hr>
+<pre>
+<h3>Date format - Required extension: php-intl</h3>
+<code class="language-twig">
+{{ '2022-11-02' | datef }}
+
+{#
+  Print [en]: November 2, 2022
+  Print [pt-BR]: 2 de novembro de 2022
+#}
+
+</code>
+</pre>
+<hr>
+<pre>
+<h3>Remove accent</h3>
+<code class="language-twig">
+{{ 'ÁÉÍóú são àçô' | remove_accent }}
+
+{# Print: AEIou sao aco #}
+
+</code>
+</pre>
+<hr>
+<pre>
+<h3>Format route</h3>
+<code class="language-twig">
+{{ 'ÁÉÍóú são àçô' | route }}
+
+{# Print: aeiou-sao-aco #}
+
+</code>
+</pre>
+<hr>
+<pre>
+<h3>Currency formatting</h3>
+<code class="language-twig">
+{{ '1.200,00' | currency_formatting }}
+
+{# Print: 1200.00 #}
+
+</code>
+</pre>
